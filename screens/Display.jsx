@@ -14,6 +14,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = {
     table: {
@@ -58,15 +61,19 @@ class Display extends React.Component {
 
       
         return (
-            <div>
-               <h1>your admission has been submitted</h1>
-                  <TableContainer component={Paper}>
+            
+   
+    <div className={classes.root}>
+      <AppBar position="static"> <Typography variant="h4" >your admission has been submitted</Typography></AppBar>
+               
+     
+                  <TableContainer component={Paper}> 
                     <Table className={classes} aria-label="simple table">
-                        <TableHead>
+                        
                             <TableRow>
                                 
                             </TableRow>
-                        </TableHead>
+                    
                         <TableBody>
                             {admissions.map((row) => (
                                 <TableRow key={row._id}>
@@ -75,13 +82,13 @@ class Display extends React.Component {
                                     </TableCell>
                                     <TableCell align="left">{row.code}</TableCell>
                                     <TableCell align="left"> 
-                                        <button 
+                                        <Button 
                                             variant="contained"
                                             onClick={() => this.deleteapplication(row._id)}
                                             color="secondary"
                                         >
-                                            Deleteapplication
-                                        </button>
+                                            Deleteadmission
+                                        </Button>
                                       
                                     </TableCell>
                                 </TableRow>
@@ -89,6 +96,7 @@ class Display extends React.Component {
                         </TableBody>
                     </Table>
                 </TableContainer> 
+              
             </div>
         );
     }

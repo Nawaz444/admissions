@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import main from './screens/main';
 import home from './screens/home';
 import Display from './screens/Display';
+import page from './screens/page';
 
 class Admissions extends React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class Admissions extends React.Component {
                     <Route path="/" exact component={main} />
                     <Route path="/home" exact component={home} />
                     <Route path="/Display" component={Display} />
+                    <Route path="/page" component={page} />
                 </Switch>
             </BrowserRouter>
         );
